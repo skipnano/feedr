@@ -1,0 +1,141 @@
+/* Custom CSS */
+/* Coded By: Dean Gilroy */
+/* Version 1.0 */
+
+/*STUCTURAL CSS*/
+header {
+	background: #222220;
+	color: white;
+	padding: 5px 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+h1 {
+	font-size: 60px;
+	margin-left: 10px;
+}
+a {
+	padding-right: 15px;
+	padding-left: 5px;
+	font-size: 20px;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	color: #444440;
+}
+p {
+	color: #444440;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+#searchInput {
+	margin-right: 15px;
+	background-color: #f5f5f5;
+	height: 40px;
+	width: 250px;
+	border-bottom: 5px solid #0aa45c;
+	border-top: none; 
+	border-left: none;
+	border-right: none;
+	color: black;
+	display: none;
+}
+.searchBox {
+	float: right;
+	margin: -55px 37px;
+}
+#searchIcon {
+	font-size: 40px;
+}
+
+
+/*ANIMATION & ROTATION ON THE LOGO*/
+#logo {
+	-webkit-animation: logoZoom 2s; /* Safari 4+ */
+  	-moz-animation:    logoZoom 2s; /* Fx 5+ */
+  	-o-animation:      logoZoom 2s; /* Opera 12+ */
+  	animation:         logoZoom 2s; /* IE 10+, Fx 29+ */
+  	-ms-transform: 		rotate(0deg); /* IE 9 */
+    -webkit-transform: 	rotate(0deg); /* Chrome, Safari, Opera */
+    transform: 			rotate(0deg);
+}
+
+	@keyframes logoZoom {
+  		0% {
+    		font-size: 0px;
+    		color: #f5f5f5;
+  		}
+  		100% {
+    		font-size: 60px;
+    		color: #f5f5f5;
+  		}
+	}
+
+/*END ANIMATION ON THE LOGO*/
+
+.dropdown-menu a {
+	font-size: 15px;
+}
+
+.container-fluid {
+	padding: 0px;
+}
+
+.article-row {
+	/*background: #DDDCF1;*/
+	margin: 0;
+}
+.article-column {
+	margin: 0;
+	text-align: center;
+}
+.module {
+	/*background-color: #DDDCF1;*/
+	font-family: 'Montserrat', sans-serif;
+	background-color: #e8e8e8;
+	padding: 10px;
+	margin: 5px -10px;
+}
+.btn {
+	font-family: 'Montserrat', sans-serif;
+	padding: 10px 40px;
+	background-color: #0aa45c;
+	color: #f5f5f5;
+}
+.footer {
+    background-color: #f5f5f5;
+}
+/*.fixed-header {
+	position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}*/
+
+
+/*PSEUDO CLASSES*/
+
+a:hover {text-decoration: none; color: #37a976;}
+
+#logo:hover {color: #0aa45c;}
+
+.btn:focus {outline:0 !important;}
+
+input:focus {outline:0 !important;}
+
+
+/*MOBILE*/
+@media only screen and (max-width: 768px) {
+
+	h1 {
+		font-size: 50px; 
+	}
+	footer, p, a {
+		font-size: 12px;
+	}
+	.footer {
+		position: relative;
+	}
+}
+
+
+
