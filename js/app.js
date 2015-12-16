@@ -18,7 +18,7 @@ $search.on('click', function () {
 
 	// Gets Reddit JSON
 	$.ajax ({
-		url: "https://www.reddit.com/top.json",
+		url: "http://www.reddit.com/top.json",
 		data: {
 			format: "json"
 		},
@@ -29,9 +29,9 @@ $search.on('click', function () {
 
 	// Gets Digg JSON
 	$.ajax ({
-		url: "https://digg.com/api/news/popular.json",
+		url: "http://digg.com/api/news/popular.json",
 		data: {
-			format: "json"
+			format: "jsonp"
 		},
 		success: function(response) {
 			console.log(response);
@@ -41,7 +41,7 @@ $search.on('click', function () {
 	$.ajax ({
 		url: "http://mashable.com/stories.json",
 		data: {
-			format: "json"
+			format: "jsonp"
 		},
 		success: function(response) {
 			console.log(response);
