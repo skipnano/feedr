@@ -6,33 +6,32 @@ Toggle for input when user clicks on search icon, hide whe user cliskc on icon a
 */
 console.log("app js loaded");
 
-// Search input slide toggle click function 
+// Global variables
 var $search = $('#searchIcon');
 var $slideBox = $('#searchInput');
 var $button = $('.btn');
 var $close = $('.closePopUp');
 
+// toggle the search inout when icon is clicked
 $search.on('click', function () {
 	$slideBox.slideToggle(500);
 });
 
 	// Gets Reddit JSON
 	$.ajax ({
-		url: "http://www.reddit.com/top.json",
-		data: {
-			format: "json"
-		},
+		url: "https://www.reddit.com/top.json",
+		dataType: "json",
 		success: function(response) {
 			console.log(response);
+
+			$('h2').append(response.data.title);
 		}
 	});
 
 	// Gets Digg JSON
 	$.ajax ({
 		url: "http://digg.com/api/news/popular.json",
-		data: {
-			format: "jsonp"
-		},
+		dataType: 'json',
 		success: function(response) {
 			console.log(response);
 		}
@@ -40,9 +39,7 @@ $search.on('click', function () {
 	// Gets Mashable JSON
 	$.ajax ({
 		url: "http://mashable.com/stories.json",
-		data: {
-			format: "jsonp"
-		},
+		dataType: 'json',
 		success: function(response) {
 			console.log(response);
 		}
