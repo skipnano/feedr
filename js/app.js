@@ -39,34 +39,33 @@ $(document).ajaxComplete(function(){
     $('#loader').css('display', 'none');
     $('.article-row').show();
 });
-	// Gets Reddit JSON
-	$.ajax ({
-		url: "https://www.reddit.com/top.json",
-		dataType: "json",
-		timeout: 5000,
-		success: function(response) {
-			console.log(response);
-			var redditResponse = response;
-			console.log(reditResponse.data.children[0].data.title);
 
-			// This iterates over the returned data and adds elements from the object to the HTML
-			$(redditResponse).each(function () {
-				var counter = counter || 1;
-				$('.module', 'h2').html(this.data.children[0].data.title);
-				counter += 1;
 
-			if(counter === 3) {
-				$('.module').html('</div>');
-				$('.module').html('div class = row');
-				counter = null;
-				}
-			});
-		},
-		complete: function() {
-			$('.main').html('Trouble in loading land....');
-		}
-	});
+// Gets Reddit JSON
+$.ajax ({
+	url: "https://www.reddit.com/top.json",
+	dataType: "json",
+	timeout: 5000,
+	success: function(response) {
+		console.log(response);
+		var redditResponse = response;
+		// This iterates over the returned data and adds elements from the object to the HTML
+		$(redditResponse.data.children).each(function () {
+			var counter = counter || 1;
+			// $('.module').append('<img src=' + this.data.thumbnail + '/>');
+			$('.module').append('<h2>' + this.data.title + '</h2>');
+			$('.module').append("<button type='submit' value='submit' class='btn'>Read More</button>");
+			counter += 1;
 
+		if(counter === 3) {
+			$('.module').html('</div>');
+			$('.module').html('div class = row');
+			counter = null;
+			}
+		});
+	},
+	complete: function() {}
+});
 
 
 // THIS IS PSEUDO CODE TO ITERATE OVER RETIRNED DATA AND ADD MODULES TO THE HTML WITH THAT DATA.
