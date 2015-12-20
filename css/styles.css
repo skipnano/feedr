@@ -15,7 +15,11 @@ h1 {
 	margin-left: 10px;
 }
 #popUp h1 {
-	font-size: 30px
+	font-size: 30px;
+	background-color: #444440;
+	color: #f5f5f5;
+	line-height: 35px;
+	 margin-bottom: 0;
 }
 h2 {
 	font-size: 15px;
@@ -41,9 +45,7 @@ img {
 	margin-left: 20px;
 }
 .article-image {
-	border-radius: 5	px;
-	height: 75%;
-	width: 100px;
+	border-radius: 5px;
 	display: inline-block;
 	margin-top: 20px;
 }
@@ -180,11 +182,6 @@ img {
 #popUp .container {
   margin-top: 80px;
 }
-
-#popUp h1 {
-  margin-bottom: 0;
-}
-
 #popUp .popUpAction {
   padding: 10px;
   background-color: #0aa45c;
@@ -193,6 +190,7 @@ img {
   border-radius: 5px;
   transform: 0.2s all;
   margin-top: 30px;
+  margin-left: 5px;
   display: block;
   width: 200px;
 }

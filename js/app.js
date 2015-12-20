@@ -66,7 +66,7 @@ $.ajax ({
 		// This iterates over the returned data and adds elements from the object to the HTML
 		$(redditResponse.data.children).each(function () {
 			var counter = counter || 1;
-			$('.main').append(articleDiv(this));
+			$('.main').append(articleModule(this));
 			// counter += 1;
 
 		// if(counter === 1) {
@@ -78,7 +78,7 @@ $.ajax ({
 });
 
 // This function builds the html structure that will be appended in main
-function articleDiv(article) {
+function articleModule(article) {
     return '<div class="module">' +
             '<img src="' + article.data.thumbnail + '"/>' +
             '<h2>' + article.data.title + '</h2>' +
