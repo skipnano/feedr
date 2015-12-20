@@ -54,7 +54,6 @@ $(document).ajaxComplete(function(){
     $('.article-row').show();
 });
 
-
 // Gets Reddit JSON
 $.ajax ({
 	url: "https://www.reddit.com/top.json",
@@ -67,24 +66,14 @@ $.ajax ({
 		// This iterates over the returned data and adds elements from the object to the HTML
 		$(redditResponse.data.children).each(function () {
 			var counter = counter || 1;
-			// $('.article-column').append('<img class="article-image" src=' + this.data.url + '/>');
-			// $('.article-column').append('<h2>' + this.data.title + '</h2>');
-			// $('.article-column').append("<button type='submit' value='submit' class='btn'>Read More</button>");
-			// $('.article-column').html('</div>');
-			// $('.module').append('<hr>');
 			$('.main').append(articleDiv(this));
-			counter += 1;
+			// counter += 1;
 
-		if(counter === 1) {
-			// $('.main').html('<div class="row article-row"></div>');
-			// $('.main').html('<div class="col-sm-4 article-column"></div>');
-			// $('.main').html('<div class="module"></div>');
-			counter = null;
-			}
+		// if(counter === 1) {
+
+		// 	counter = null;
+		// 	}
 		});
-	},
-	error: function() {
-		// $('.main').html("<h1>Trouble in loading land...</h1>");
 	}
 });
 
