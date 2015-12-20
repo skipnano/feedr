@@ -1,6 +1,6 @@
 /* Custom CSS */
-/* Coded By: Dean Gilroy */
-/* Version 1.0 */
+/* Coded by Dean Gilroy @ General Assembly */
+/* Project: Feedr; */
 
 /*STUCTURAL CSS*/
 header {
@@ -30,8 +30,13 @@ p {
 	font-size: 20px;
 	font-family: 'Montserrat', sans-serif;
 }
+hr {
+	border-top: 1px solid #444440;
+}
 .article-image {
 	border-radius: 20px;
+	height: 75%;
+	width: 100px;
 }
 .options {
 	color: #444440;
@@ -97,7 +102,6 @@ p {
 }
 
 .article-row {
-	/*background: #DDDCF1;*/
 	margin: 0;
 }
 .article-column {
@@ -105,7 +109,6 @@ p {
 	text-align: center;
 }
 .module {
-	/*background-color: #DDDCF1;*/
 	font-family: 'Montserrat', sans-serif;
 	background-color: #e8e8e8;
 	padding: 10px;
@@ -114,7 +117,7 @@ p {
 }
 .btn {
 	font-family: 'Montserrat', sans-serif;
-	padding: 5px 25px;
+	padding: 5px 10px;
 	background-color: #0aa45c;
 	color: #f5f5f5;
 }
@@ -195,6 +198,8 @@ a:hover {text-decoration: none; color: #37a976;}
 .btn:focus {outline:0 !important;}
 
 input:focus {outline:0 !important;}
+
+.options:focus {outline:0 !important;}
 
 
 /*MOBILE*/

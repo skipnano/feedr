@@ -1,8 +1,7 @@
 /*
-On page load display load icon while content renders
-Load results in 'module' class
-When user click read more display article in a popup
-Toggle for input when user clicks on search icon, hide whe user cliskc on icon again
+Coded by Dean Gilroy @ General Assembly
+Javascript Alpha Class
+Project: Feedr
 */
 console.log("app js loaded");
 
@@ -12,22 +11,22 @@ var $slideBox = $('#searchInput');
 var $button = $('.btn');
 var $close = $('.closePopUp');
 
-// toggle the search inout when icon is clicked
+// toggle the search input when icon is clicked
 $search.on('click', function () {
 	$slideBox.slideToggle(500);
 });
 
-// Display popup when button is clicked
-$button.on('click', function() {
+// Display popup when button is clicked. Binds the event to the .main class, so all buttons added via jquery will fire
+$('.main').on('click', '.btn', function () {
 	$('#popUp').removeClass();
 	$('#searchIcon').hide();
 });
-// Hide the popup when the X is clicked
-$close.on('click', function() {
+
+// Hide the popup when the X is clicked. Binds the event to the #popUp ID
+$('#popUp').on('click', '.closePopUp', function () {
 	$('#popUp').addClass('hidden');
 	$('#searchIcon').show();
 });
-
 
 // Displays the ajax loader while ajax is executig
 $(document).ajaxStart(function() {
@@ -52,19 +51,30 @@ $.ajax ({
 		// This iterates over the returned data and adds elements from the object to the HTML
 		$(redditResponse.data.children).each(function () {
 			var counter = counter || 1;
-			// $('.module').append('<img src=' + this.data.thumbnail + '/>');
+			$('.module').append('<img class="article-image" src=' + this.data.url + '/>');
 			$('.module').append('<h2>' + this.data.title + '</h2>');
 			$('.module').append("<button type='submit' value='submit' class='btn'>Read More</button>");
+			$('.module').append('<hr>');
 			counter += 1;
 
 		if(counter === 3) {
 			$('.module').html('</div>');
-			$('.module').html('div class = row');
+			$('.main').html('<div class="row article-row">');
+			$('.main').html('<div class="col-sm-4 article-column">');
+			$('.main').html('<div class="module">');
 			counter = null;
 			}
+
+			// $('.main').on('click', '.btn', function() {
+			// 	var title = this.data.title;
+			// 	var description = this.data.media.oembed.description;
+			// 	console.log(description);
+			// });
 		});
 	},
-	complete: function() {}
+	error: function() {
+		// $('.main').html("<h1>Trouble in loading land...</h1>");
+	}
 });
 
 
