@@ -229,6 +229,18 @@ input:focus {outline:0 !important;}
 	.footer {
 		position: relative;
 	}
+	.btn {
+		padding: 10px 30px;
+	}
+	.col-md-12 {
+		text-align: center;
+	}
+	#popUp .popUpAction {
+		margin-top: 0px;
+	}
+	.popUpAction {
+		font-size: 20px;
+	}
 }
 
 
