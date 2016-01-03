@@ -8,12 +8,23 @@ console.log("app js loaded");
 // Global variables
 var $search = $('#searchIcon');
 var $slideBox = $('#searchInput');
+var $slideGo = $('#searchBtn');
+var $mobileSearch = $('.mobile-search');
+var $mobSearch = $('#mob-search-icon');
+var $mobSearchInput = $('#mob-search-input');
+var $mobSearchBtn = $('#mob-search-btn');
 var $button = $('.btn');
 var $close = $('.closePopUp');
 
 // Toggle the search input when icon is clicked
 $search.on('click', function () {
 	$slideBox.slideToggle(500);
+	$slideGo.slideToggle(500);
+});
+
+// Toggle the mobile search div when mobile icon is clicked
+$mobSearch.on('click', function () {
+	$mobileSearch.slideToggle(500);
 });
 
 // Display popup when button is clicked. Binds the event to the .main class, so all buttons added via jquery will fire
