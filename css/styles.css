@@ -258,9 +258,9 @@ input:focus {outline:0 !important;}
 	.col-md-12 {
 		text-align: center;
 	}
-	#popUp .popUpAction {
+	/*#popUp .popUpAction {
 		margin-top: 0px;
-	}
+	}*/
 	.popUpAction {
 		font-size: 20px;
 	}
